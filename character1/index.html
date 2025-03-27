@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Praxis</title>
+        <link rel="stylesheet" href="../style.css">
+    </head>
+    <body>      
+
+      <!--- THE MENU AREA --->
+      <div id="menu" class="row">
+        <a href="../index.html">Characters</a> /  
+        <a href="index.html">Room 1</a> /  
+        <a href="room2.html">Room 2</a> / 
+        <a href="room3.html">Room 3</a> 
+      </div>
+
+      <!--- THE HEADER AREA --->
+      <div id="header" class="row">
+        <div id="past">&#60;</div>
+        <div id="next">&#62;</div>
+      </div>
+
+      <!--- HOLDS ALL THE IMAGES AND NOTES --->
+      <div class="row">
+
+          <!---IMAGE ONE --->
+          <div class="image show"> <!---'show' = default image to display. Used for testing-->
+            <img src="images/widebed.jpg">
+             <!---Image One: Note 1 --->
+            <div class="note" style="top:30px;left:50px;width:200px;height:50px;">
+              Bunting: I dressed the wall some handmade bunting. I imagined her making this to decorate her uni room which where the walls are probably blander than they would be at home.
+            </div>
+            <!---Image One: Note 2 --->
+            <div class="note rounded" style="top:380px;left:400px;width:80px;height:50px;">
+            Coat and Shoes: Most teenage rooms are always a bit messy so I felt like it seemed appropriate to have her shoes on the floor an her coat chucked on the bed where she left it.
+            </div>
+            <!---Image One: Note 3 --->
+            <div class="note" style="top:250px;left:5px;width:80px;height:170px;">
+              Cabinet: I put a cabinet by the door as I felt like that is a useful place to store things but also put things down.
+              
+              Backpack: I put a backpack by the door as I felt like that was a useful place to put it where she can grab it before she leaves for her lectures.
+
+              Notebook: Clutter in random places I feel is something common in teenage bedrooms so having a notebook just knocking around the room seems realistic.
+
+              Hairbrush: Similar to the notebook I like the idea of having clutter dotted around. Having a hairbrush by the door seems appropriate as she can quickly brush her hair before leaving. But it also feels like it is in the wrong place as it would make more sense for it to be by the mirror. So it looks like it has been quickly dumped there.
+             
+            
+            </div>
+
+             <!---Image One: Note 3 --->
+             <div class="note" style="top:80px;left:300px;width:150px;height:90px;">
+              Wall Art: University walls are often quite bland so I put up some prints around her bed to decorate the wall
+            </div>
+
+          </div>
+        
+          <!---IMAGE TWO-->
+          <div class="image">
+            <img src="images/bedcu.jpeg">
+                <!---Image Two: Note 1 --->
+                <div class="note" style="top:350px;left:300px;width:100px;height:70px;">
+                  Blue Duvet Cover: I wanted to include blue and green tones in her bedroom as those colours remind me of the sea. One of Lucys favourite things to do when at home is go to the beach and I felt like this colour palette would remind her of home.
+                  </div>
+                  <!---Image Two: Note 1 --->
+                <div class="note" style="top:240px;left:310px;width:70px;height:50px;">
+                  Dinosaur Jellycat: Jellycats are really on trend at the moment and lots of teenagers collect them. I imagine her and her friends having matching dinosaurs.
+                  </div>
+                  <!---Image Two: Note 1 --->
+                <div class="note" style="top:200px;left:50px;width:130px;height:190px;">
+                  Laptop & Headphones: I wanted the bedroom to look lived in and I could imagine Lucy chilling out on her bed watching something on her laptop.
+                  </div>
+                  <!---Image Two: Note 1 --->
+                <div class="note" style="top:150px;left:270px;width:100px;height:50px;">
+                  Crochet Cushion and Throw: With Lucy being a very creative person I wanted to reflect this in her bedroom. Therefore when dressing the bed with a throw and cushion I went for handmade crochet that she would have made.
+                  </div>
+
+                <!---Image Two: Note 2
+                <div class="note" style="top:380px;left:370px;width:70px;height:120px;">
+                  Image Two: Note 2
+                </div> --->
+          </div>
+
+          <!---IMAGE THREE-->
+          <div class="image">
+            <img src="images/bedsidetable.jpeg">
+
+              <!---Image Three: Note 1 --->
+              <div class="note" style="top:200px;left:100px;width:200px;height:200px;">
+                Bedside Table: Bedside tables are the perfect place for clutter but also little trinkets that for a viewer help shape their view of the character style and aesthetic. As for clutter, there are often glasses, mugs and plates left lying around so it seemed appropriate to have an empty glass on the table. When it comes to trinkets, I liked the idea of having girly clutter. The things you do not really need but when you see in the shop you are like “awh that's cute” or things that just make the space feel a bit more lived in.
+              </div>
+              <!---Image Three: Note 1 --->
+              <div class="note" style="top:250px;left:348px;width:80px;height:70px;">
+              Journal: One Lucys favourite hobbies alongside art is journalling. It allows her to let out her emotions. I can imagine her writing in her journal every night before bed making it is place on the bedside table seem very appropriate.
+              </div>
+
+              
+              </div>
+          </div>
+      </div>
+
+      <div class="row">
+        <div id="display-note">
+          Default content for the notes area
+        </div>
+      </div>
+
+        <script>
+
+          // Add a mouse click to all note buttons
+          let notes = document.getElementsByClassName("note");
+          let display = document.getElementById("display-note"); 
+          for (let i = 0; i < notes.length; i++) {
+            notes[i].addEventListener("click", function (e) {
+              display.innerHTML = this.innerHTML;
+            });
+          }
+
+          // Generate the image navigation controls
+          let current = 0;
+          let images = document.getElementsByClassName("image");
+          let pastButton = document.getElementById("past"); 
+          let nextButton = document.getElementById("next"); 
+          nextButton.addEventListener("click", function (e) {
+            for (let i = 0; i < images.length; i++) {
+              images[i].style.display = "none";
+            }
+            current++; 
+            if(current>=images.length){current = 0}; 
+            images[current].style.display = "block";
+          });
+          pastButton.addEventListener("click", function (e) {
+            for (let i = 0; i < images.length; i++) {
+              images[i].style.display = "none";
+            }
+            current--; 
+            if(current<0){current = images.length-1}; 
+            images[current].style.display = "block";
+          });
+          
+
+
+
+        </script>
+    </body>
+</html>
+

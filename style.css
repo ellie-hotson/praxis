@@ -1,0 +1,84 @@
+html, body{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color: #cdcdcd;
+    background-color: #421e1e;
+  }
+
+  a,
+  a:hover,
+  a:link,
+  a:active{
+    color: aliceblue;
+    text-decoration:none;
+    display: block;
+  }
+  /* HEADER AREA & CONTROLS */
+  #header{
+    margin-bottom:10px;
+  }
+  #past,
+  #next{
+    width:100px;
+    border-bottom:3px dotted transparent;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+  }
+  #past:hover,
+  #next:hover{
+    color: #d7ff44;
+    cursor: pointer;
+    border-bottom:3px dotted #d7ff44;
+  }
+
+  /* DIV containing all the images */
+  .row{
+    /*border:1px solid rgb(0, 183, 255); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Set the size of the main image */
+  .image{
+    position:relative;
+    display:none; /* Hide them until ready to display */
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+  }
+  .image,
+  .image img{
+    width:600px;
+    height:450px;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+  }
+  .show{
+    display:block;
+  }
+
+  /* The dotted boxes over the images */
+  .note{
+    border:8px dotted rgb(235, 238, 241);
+    position:absolute;
+    content-visibility: hidden; 
+  }
+  .note:hover{
+    
+
+    cursor: pointer;
+  }
+  .rounded{
+    border-radius: 25px;
+  }
+
+  /* How Note contents are displayed */
+  #display-note{
+    margin-top:20px;
+    justify-content: left;
+    text-align: left;
+    vertical-align: text-top;
+    width:900px;
+  }

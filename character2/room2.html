@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Praxis</title>
+        <link rel="stylesheet" href="../style.css">
+    </head>
+    <body>      
+
+      <!--- THE MENU AREA --->
+      <div id="menu" class="row">
+        <a href="../index.html">Characters</a> /  
+        <a href="index.html">Room 1</a> /  
+        <a href="room2.html">Room 2</a> 
+      </div>
+
+      <!--- THE HEADER AREA --->
+      <div id="header" class="row">
+        <div id="past">&#60;</div>
+        <div id="next">&#62;</div>
+      </div>
+
+      <!--- HOLDS ALL THE IMAGES AND NOTES --->
+      <div class="row">
+
+          <!---IMAGE ONE --->
+          <div class="image show"> <!---'show' = default image to display. Used for testing-->
+            <img src="images/deskmcu.jpeg">
+             <!---Image One: Note 1 --->
+            <div class="note" style="top:50px;left:20px;width:550px;height:300px;">
+            The Desk: You may be wondering why there is a desk in his bedroom. David lives in a 2 bedroom flat, where one of his rooms is his son Jacks. David often works from home and his living room area is very small which leaves him no choice but to have a desk in his bedroom.
+
+            </div>
+           
+
+          </div>
+        
+          <!---IMAGE TWO-->
+          <div class="image">
+            <img src="images/deskleft.jpg">
+                <!---Image Two: Note 1 --->
+                <div class="note" style="top:200px;left:180px;width:400px;height:220px;">
+                Desk Clutter: Desk Clutter: Every desk is not complete without desk clutter. but you could actually argue that they are also desk essentials. He has his laptop and headphones on the desk definitely essential, but also pens, a hole punch, desk light all things you would expect to see on a desk.
+
+                </div>
+
+                <!---Image Two: Note 2
+                <div class="note" style="top:380px;left:370px;width:70px;height:120px;">
+                  Image Two: Note 2
+                </div> --->
+          </div>
+
+          <!---IMAGE THREE-->
+          <div class="image">
+            <img src="images/deskright.jpg">
+
+              <!---Image Three: Note 1 --->
+              <div class="note" style="top:230px;left:260px;width:200px;height:100px;">
+                Toys: It is not only books that Jack leaves lying around in Davids bedroom. He also lives his toys, sometimes he like to play in his Dadss room, especially when David is working at his desk. There are toys dotted around the room when Jack has got bored and left them there. There are also intentional toys on his desk where jack has given them to David as a gift, for example he has given him a car or a soft toy or made him a drink from his play kitchen. The toys in Davids room are just a selection of ones that Jack has left there as Jack has his own room in Davids flat filled with toys.
+              </div>
+
+              <!---Image Three: Note 2 --->
+              <div class="note rounded" style="top:100px;left:300px;width:100px;height:90px;">
+                Photos: I wanted to put a few photos in the bedroom of his son jack. As when he is with his mum it nice they are nice memories of him. There is a framed one on his desk and also one by his bed.
+              </div>
+          </div>
+      </div>
+
+      <div class="row">
+        <div id="display-note">
+          Default content for the notes area
+        </div>
+      </div>
+
+        <script>
+
+          // Add a mouse click to all note buttons
+          let notes = document.getElementsByClassName("note");
+          let display = document.getElementById("display-note"); 
+          for (let i = 0; i < notes.length; i++) {
+            notes[i].addEventListener("click", function (e) {
+              display.innerHTML = this.innerHTML;
+            });
+          }
+
+          // Generate the image navigation controls
+          let current = 0;
+          let images = document.getElementsByClassName("image");
+          let pastButton = document.getElementById("past"); 
+          let nextButton = document.getElementById("next"); 
+          nextButton.addEventListener("click", function (e) {
+            for (let i = 0; i < images.length; i++) {
+              images[i].style.display = "none";
+            }
+            current++; 
+            if(current>=images.length){current = 0}; 
+            images[current].style.display = "block";
+          });
+          pastButton.addEventListener("click", function (e) {
+            for (let i = 0; i < images.length; i++) {
+              images[i].style.display = "none";
+            }
+            current--; 
+            if(current<0){current = images.length-1}; 
+            images[current].style.display = "block";
+          });
+          
+
+
+
+        </script>
+    </body>
+</html>
+

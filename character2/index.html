@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Praxis</title>
+        <link rel="stylesheet" href="../style.css">
+    </head>
+    <body>      
+
+      <!--- THE MENU AREA --->
+      <div id="menu" class="row">
+        <a href="../index.html">Characters</a> /  
+        <a href="index.html">Room 1</a> /  
+        <a href="room2.html">Room 2</a> / 
+      </div>
+
+      <!--- THE HEADER AREA --->
+      <div id="header" class="row">
+        <div id="past">&#60;</div>
+        <div id="next">&#62;</div>
+      </div>
+
+      <!--- HOLDS ALL THE IMAGES AND NOTES --->
+      <div class="row">
+
+          <!---IMAGE ONE --->
+          <div class="image show"> <!---'show' = default image to display. Used for testing-->
+            <img src="images/widebed.jpg">
+             <!---Image One: Note 1 --->
+            <div class="note" style="top:330px;left:20px;width:100px;height:100px;">
+             Cabinet: I put a cabinet by the door as I felt like that is a useful place to store things but also put things down whether that be David or Jack.
+            </div>
+            <!---Image One: Note 3 --->
+            <div class="note" style="top:230px;left:350px;width:50px;height:50px;">
+            Bedding: When decorating this room I wanted to think about the fact that he has no female influence when decorating, This changes the way the room is decorated. As for the bedding I knew that there would be no throws or cushions as me.n often complain that there is not point to them as you have to take them all off when you go to bed. I also went for a what you could say is a kind of boring duvet cover as for David the design of the duvet cover is definitely not one of his priorities. the pillow case colour is also slightly off which I thought was something that he would not have even noticed but is true.
+            </div>
+
+             <!---Image One: Note 3 --->
+             <div class="note" style="top:370px;left:510px;width:50px;height:50px;">
+              Toys: It is not only books that Jack leaves lying around in Davids bedroom. He also lives his toys, sometimes he like to play in his Dadss room, especially when David is working at his desk. There are toys dotted around the room when Jack has got bored and left them there. There are also intentional toys on his desk where jack has given them to David as a gift, for example he has given him a car or a soft toy or made him a drink from his play kitchen. The toys in Davids room are just a selection of ones that Jack has left there as Jack has his own room in Davids flat filled with toys.
+            </div>
+            <!---Image One: Note 3 --->
+            <div class="note" style="top:200px;left:170px;width:120px;height:90px;">
+            T-Shirt, Wallet, Bag and Shoes: i wanted the room to look lived in so i put items dotted around the room as if they have just been dumped there and need to be put in the actual home.
+            </div>
+            <!---Image One: Note 1 --->
+            <div class="note" style="top:130px;left:10px;width:100px;height:150px;">
+              Fan: Something men like to spend their money on. Much more than a cushion for the bed or a little ornament. So i put a fancy fan on the cabinet by the bed. This is a useful spot as when it rotates it reaches the bed and the desk area.
+             </div>
+
+          </div>
+        
+          <!---IMAGE TWO-->
+          <div class="image">
+            <img src="images/cabinetcu.jpeg">
+                <!---Image Two: Note 1 --->
+                <div class="note" style="top:10px;left:300px;width:200px;height:200px;">
+                Fan: Something men like to spend their money on. Much more than a cushion for the bed or a little ornament. So i put a fancy fan on the cabinet by the bed. This is a useful spot as when it rotates it reaches the bed and the desk area.
+                </div>
+                 <!---Image Two: Note 1 --->
+                 <div class="note" style="top:300px;left:100px;width:400px;height:90px;">
+                  Toys: It is not only books that Jack leaves lying around in Davids bedroom. He also lives his toys, sometimes he like to play in his Dadss room, especially when David is working at his desk. There are toys dotted around the room when Jack has got bored and left them there. There are also intentional toys on his desk where jack has given them to David as a gift, for example he has given him a car or a soft toy or made him a drink from his play kitchen. The toys in Davids room are just a selection of ones that Jack has left there as Jack has his own room in Davids flat filled with toys.
+                </div>
+                 <!---Image Two: Note 1 --->
+                 <div class="note" style="top:170px;left:170px;width:100px;height:100px;">
+                Childrens Books: There are childrens books dotted around the room, specifically in the bed area as it is tradition whenever Jack is staying at Davids they always read a bedtime story in his bed. The fact that there are multiple dotted is of the influence of Jack. He knows that the stories live in Davids bedside table so he will take them out and ask his dad to read them at any time of the day and sometimes he will attempt to read them himself. But as is always the case with children Jack likes to get thing out but is not as much of a fan of putting things away.
+                </div>
+
+                <!---Image Two: Note 2
+                <div class="note" style="top:380px;left:370px;width:70px;height:120px;">
+                  Image Two: Note 2
+                </div> --->
+          </div>
+
+          <!---IMAGE THREE-->
+          <div class="image">
+            <img src="images/bedsidetable.jpeg">
+
+              <!---Image Three: Note 1 --->
+              <div class="note" style="top:20px;left:100px;width:400px;height:400px;">
+                Bedside Table: Davids bedside table is very simple but everything that is there is there for a reason. He has some of his tech on the bedside table. As well as a mug and a selection of children's books he will read to Jack before bed. the door of the bedside table is propped open with a teddy bear. This is another influence from jack in the bedroom, where he has been looking through the books in the cabinet.
+              </div>
+
+              
+          </div>
+      </div>
+
+      <div class="row">
+        <div id="display-note">
+          Default content for the notes area
+        </div>
+      </div>
+
+        <script>
+
+          // Add a mouse click to all note buttons
+          let notes = document.getElementsByClassName("note");
+          let display = document.getElementById("display-note"); 
+          for (let i = 0; i < notes.length; i++) {
+            notes[i].addEventListener("click", function (e) {
+              display.innerHTML = this.innerHTML;
+            });
+          }
+
+          // Generate the image navigation controls
+          let current = 0;
+          let images = document.getElementsByClassName("image");
+          let pastButton = document.getElementById("past"); 
+          let nextButton = document.getElementById("next"); 
+          nextButton.addEventListener("click", function (e) {
+            for (let i = 0; i < images.length; i++) {
+              images[i].style.display = "none";
+            }
+            current++; 
+            if(current>=images.length){current = 0}; 
+            images[current].style.display = "block";
+          });
+          pastButton.addEventListener("click", function (e) {
+            for (let i = 0; i < images.length; i++) {
+              images[i].style.display = "none";
+            }
+            current--; 
+            if(current<0){current = images.length-1}; 
+            images[current].style.display = "block";
+          });
+          
+
+
+
+        </script>
+    </body>
+</html>
+

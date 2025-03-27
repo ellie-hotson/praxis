@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Praxis</title>
+        <link rel="stylesheet" href="../style.css">
+    </head>
+    <body>      
+
+      <!--- THE MENU AREA --->
+      <div id="menu" class="row">
+        <a href="../index.html">Characters</a> /  
+        <a href="index.html">Room 1</a> /  
+        <a href="room2.html">Room 2</a> / 
+        <a href="room3.html">Room 3</a> 
+      </div>
+
+      <!--- THE HEADER AREA --->
+      <div id="header" class="row">
+        <div id="past">&#60;</div>
+        <div id="next">&#62;</div>
+      </div>
+
+      <!--- HOLDS ALL THE IMAGES AND NOTES --->
+      <div class="row">
+
+          <!---IMAGE ONE --->
+          <div class="image show"> <!---'show' = default image to display. Used for testing-->
+            <img src="images/dresserwide.jpg">
+             <!---Image One: Note 1 --->
+            <div class="note" style="top:20px;left:60px;width:500px;height:280px;">
+            Dresser: Doris has a dresser where she gets ready in the morning. It has a mirror and a space for her jewellery. she also has lots of trinkets on here and more pictures of her family.
+            </div>
+            <!---Image One: Note 3 --->
+            <div class="note" style="top:330px;left:370px;width:200px;height:90px;">
+            Lace: Doris doesn't want the dresser to get scratched so one time when she was at the charity shop she brought this piece of lace to cover her dresser to keep the surface safe. She also thought that it looked pretty so it was a win win.
+            </div>
+
+           
+
+          </div>
+        
+          <!---IMAGE TWO-->
+          <div class="image">
+            <img src="images/dresserleft.jpg">
+                <!---Image Two: Note 1 --->
+                <div class="note" style="top:150px;left:130px;width:200px;height:90px;">
+                Photos: Doris loves having photos around her room as she is very family orientated.. She has her favourite wedding photo on her bedside table and picture of her grandchildren dotted around her room.
+                </div>
+                 <!---Image Two: Note 1 --->
+                 <div class="note" style="top:130px;left:380px;width:200px;height:140px;">
+                  Trinkets: Nan's love their trinkets and Doris is no different. Dotted across her room are little trinkets she has found in the charity shop.
+                </div>
+
+                <!---Image Two: Note 2
+                <div class="note" style="top:380px;left:370px;width:70px;height:120px;">
+                  Image Two: Note 2
+                </div> --->
+          </div>
+
+          <!---IMAGE THREE-->
+          <div class="image">
+            <img src="images/windowsill.jpg">
+
+              <!---Image Three: Note 1 --->
+              <div class="note" style="top:130px;left:100px;width:200px;height:100px;">
+              Photos: Doris loves having photos around her room as she is very family orientated.. She has her favourite wedding photo on her bedside table and picture of her grandchildren dotted around her room.
+              </div>
+
+              <!---Image Three: Note 2 --->
+              <div class="note rounded" style="top:200px;left:360px;width:100px;height:90px;">
+                Window Sill - With the fact that Doris only has one limited space to decorate in her care home bedroom I wanted to include a window sill space by the her sitting area so she can display more of her photos, prints and ornaments.
+              </div>
+          </div>
+      </div>
+
+      <div class="row">
+        <div id="display-note">
+          Default content for the notes area
+        </div>
+      </div>
+
+        <script>
+
+          // Add a mouse click to all note buttons
+          let notes = document.getElementsByClassName("note");
+          let display = document.getElementById("display-note"); 
+          for (let i = 0; i < notes.length; i++) {
+            notes[i].addEventListener("click", function (e) {
+              display.innerHTML = this.innerHTML;
+            });
+          }
+
+          // Generate the image navigation controls
+          let current = 0;
+          let images = document.getElementsByClassName("image");
+          let pastButton = document.getElementById("past"); 
+          let nextButton = document.getElementById("next"); 
+          nextButton.addEventListener("click", function (e) {
+            for (let i = 0; i < images.length; i++) {
+              images[i].style.display = "none";
+            }
+            current++; 
+            if(current>=images.length){current = 0}; 
+            images[current].style.display = "block";
+          });
+          pastButton.addEventListener("click", function (e) {
+            for (let i = 0; i < images.length; i++) {
+              images[i].style.display = "none";
+            }
+            current--; 
+            if(current<0){current = images.length-1}; 
+            images[current].style.display = "block";
+          });
+          
+
+
+
+        </script>
+    </body>
+</html>
+

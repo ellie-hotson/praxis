@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Praxis</title>
+        <link rel="stylesheet" href="../style.css">
+    </head>
+    <body>      
+
+      <!--- THE MENU AREA --->
+      <div id="menu" class="row">
+        <a href="../index.html">Characters</a> /  
+        <a href="index.html">Room 1</a> /  
+        <a href="room2.html">Room 2</a> / 
+        <a href="room3.html">Room 3</a> 
+      </div>
+
+      <!--- THE HEADER AREA --->
+      <div id="header" class="row">
+        <div id="past">&#60;</div>
+        <div id="next">&#62;</div>
+      </div>
+
+      <!--- HOLDS ALL THE IMAGES AND NOTES --->
+      <div class="row">
+
+                 <!---IMAGE ONE --->
+                 <div class="image show"> <!---'show' = default image to display. Used for testing-->
+                  <img src="images/dressing.jpeg">
+                   <!---Image One: Note 1 --->
+                  <div class="note" style="top:370px;left:370px;width:100px;height:50px;">
+                    Blanket on the Floor: Given the space being quite tight, I imagine her sitting on the floor to do her makeup, but she would not want to sit on the hard wooden floor so putting a blanket down makes it more comfortable for her.
+                  </div>
+                  <!---Image One: Note 2 --->
+                  <div class="note rounded" style="top:188px;left:190px;width:150px;height:100px;">
+                  Makeup: As I said earlier I wanted the space to look lived in so on the table my her mirror is where she keeps her makeup, perfume, etc.. But I liked the idea of leaving some items open looking like they are still being used, others sticking out of the makeup bag and some just laying on the side. I felt like this gave the room a more realistic feel.
+                  </div>
+                  <!---Image One: Note 3 --->
+                  <div class="note" style="top:50px;left:390px;width:120px;height:200px;">
+                    Mirror: A full length mirror is a must for a girls bedroom, It is a space where they can do their makeup, check their outfits and take hundreds of mirror selfies. With uni rooms often being quite small, I thought it did not make sense to have a desk space and a dresser so I opted for this make-shift dressing area where she can sit and do her makeup but also check out her outfit.
+                   </div>
+
+             
+
+          </div>
+        
+          
+
+                <!---Image Two: Note 2
+                <div class="note" style="top:380px;left:370px;width:70px;height:120px;">
+                  Image Two: Note 2
+                </div> --->
+          </div>
+
+          
+      </div>
+
+      <div class="row">
+        <div id="display-note">
+          Default content for the notes area
+        </div>
+      </div>
+
+        <script>
+
+          // Add a mouse click to all note buttons
+          let notes = document.getElementsByClassName("note");
+          let display = document.getElementById("display-note"); 
+          for (let i = 0; i < notes.length; i++) {
+            notes[i].addEventListener("click", function (e) {
+              display.innerHTML = this.innerHTML;
+            });
+          }
+
+          // Generate the image navigation controls
+          let current = 0;
+          let images = document.getElementsByClassName("image");
+          let pastButton = document.getElementById("past"); 
+          let nextButton = document.getElementById("next"); 
+          nextButton.addEventListener("click", function (e) {
+            for (let i = 0; i < images.length; i++) {
+              images[i].style.display = "none";
+            }
+            current++; 
+            if(current>=images.length){current = 0}; 
+            images[current].style.display = "block";
+          });
+          pastButton.addEventListener("click", function (e) {
+            for (let i = 0; i < images.length; i++) {
+              images[i].style.display = "none";
+            }
+            current--; 
+            if(current<0){current = images.length-1}; 
+            images[current].style.display = "block";
+          });
+          
+
+
+
+        </script>
+    </body>
+</html>
+

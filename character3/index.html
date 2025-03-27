@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Praxis</title>
+        <link rel="stylesheet" href="../style.css">
+    </head>
+    <body>      
+
+      <!--- THE MENU AREA --->
+      <div id="menu" class="row">
+        <a href="../index.html">Characters</a> /  
+        <a href="index.html">Room 1</a> /  
+        <a href="room2.html">Room 2</a> / 
+        <a href="room3.html">Room 3</a> 
+      </div>
+
+      <!--- THE HEADER AREA --->
+      <div id="header" class="row">
+        <div id="past">&#60;</div>
+        <div id="next">&#62;</div>
+      </div>
+
+      <!--- HOLDS ALL THE IMAGES AND NOTES --->
+      <div class="row">
+
+          <!---IMAGE ONE --->
+          <div class="image show"> <!---'show' = default image to display. Used for testing-->
+            <img src="images/bedwide.jpg">
+             <!---Image One: Note 1 --->
+            <div class="note" style="top:40px;left:10px;width:100px;height:300px;">
+            Grandfather Clock: I love the ornate grandfather clock, it is just beautiful and I wanted to find a space for it in one of my sets. I thought that Doris would have chosen this if she was in a charity shop and would have appreciated its beauty so it now is pride of place at the end of her bed.
+            </div>
+            <!---Image One: Note 3 --->
+            <div class="note" style="top:230px;left:300px;width:100px;height:90px;">
+            Bedding: Since Doris lives in a care home I wanted to create a space that was relatively simple but had the interior style of someone of her age. She loves knitting and sewing so I added a handmade patch cushion to her bed that I could imagine her making. The bedding is simple but cute with little birds embroidered on it which I thought she would like. 
+            </div>
+
+        
+
+          </div>
+        
+          <!---IMAGE TWO-->
+          <div class="image">
+            <img src="images/bedsidetable.jpg">
+                <!---Image Two: Note 1 --->
+                <div class="note" style="top:200px;left:182px;width:90px;height:100px;">
+                Telephone: The telephone is significant as Doris's family live quite a long way away from her retirement home so she does not get to see them very often. so she always has weekly phone calls with all of her children to get updates on their lives and here about her grandchildren. Doris is also a creature of comfort so she has a quite old fashioned phone as she always says “if it ain't broke don't fix it.”
+                 </div>
+                 <!---Image Two: Note 1 --->
+                <div class="note" style="top:170px;left:280px;width:200px;height:190px;">
+                Photos: Doris loves having photos around her room as she is very family orientated.. She has her favourite wedding photo on her bedside table and picture of her grandchildren dotted around her room.
+                 </div>
+                 <!---Image Two: Note 1 --->
+                <div class="note" style="top:400px;left:60px;width:500px;height:40px;">
+                Bedside Table: For her bedside table I thought it needed to have the perfect balance between useful things and cute room decor. there is a wedding picture from her wedding day which she kisses every night before bed. But the bedside table is mostly filled with quite practical things, like a phone, lamp, mug and alarm clock.
+                 </div>
+
+
+                <!---Image Two: Note 2
+                <div class="note" style="top:380px;left:370px;width:70px;height:120px;">
+                  Image Two: Note 2
+                </div> --->
+          </div>
+
+          <!---IMAGE THREE-->
+          <div class="image">
+            <img src="images/3.gif">
+
+              <!---Image Three: Note 1 --->
+              <div class="note" style="top:20px;left:30px;width:50px;height:50px;">
+                Image Three: Note 1
+              </div>
+
+              <!---Image Three: Note 2 --->
+              <div class="note rounded" style="top:20px;left:680px;width:50px;height:90px;">
+                Image Three: Note 1
+              </div>
+          </div>
+      </div>
+
+      <div class="row">
+        <div id="display-note">
+          Default content for the notes area
+        </div>
+      </div>
+
+        <script>
+
+          // Add a mouse click to all note buttons
+          let notes = document.getElementsByClassName("note");
+          let display = document.getElementById("display-note"); 
+          for (let i = 0; i < notes.length; i++) {
+            notes[i].addEventListener("click", function (e) {
+              display.innerHTML = this.innerHTML;
+            });
+          }
+
+          // Generate the image navigation controls
+          let current = 0;
+          let images = document.getElementsByClassName("image");
+          let pastButton = document.getElementById("past"); 
+          let nextButton = document.getElementById("next"); 
+          nextButton.addEventListener("click", function (e) {
+            for (let i = 0; i < images.length; i++) {
+              images[i].style.display = "none";
+            }
+            current++; 
+            if(current>=images.length){current = 0}; 
+            images[current].style.display = "block";
+          });
+          pastButton.addEventListener("click", function (e) {
+            for (let i = 0; i < images.length; i++) {
+              images[i].style.display = "none";
+            }
+            current--; 
+            if(current<0){current = images.length-1}; 
+            images[current].style.display = "block";
+          });
+          
+
+
+
+        </script>
+    </body>
+</html>
+

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Praxis</title>
+        <link rel="stylesheet" href="../style.css">
+    </head>
+    <body>      
+
+      <!--- THE MENU AREA --->
+      <div id="menu" class="row">
+        <a href="../index.html">Characters</a> /  
+        <a href="index.html">Room 1</a> /  
+        <a href="room2.html">Room 2</a> / 
+        <a href="room3.html">Room 3</a> 
+      </div>
+
+      <!--- THE HEADER AREA --->
+      <div id="header" class="row">
+        <div id="past">&#60;</div>
+        <div id="next">&#62;</div>
+      </div>
+
+      <!--- HOLDS ALL THE IMAGES AND NOTES --->
+      <div class="row">
+
+          <!---IMAGE ONE --->
+          <div class="image show"> <!---'show' = default image to display. Used for testing-->
+            <img src="images/widesittingarea.jpg">
+             <!---Image One: Note 1 --->
+            <div class="note" style="top:150px;left:270px;width:100px;height:200px;">
+            Arm Chair with Crochet Blanket: It was crucial for Doris when she moved into the retirement home that she had somewhere she could sit and do knitting and crochet.. on the arm chair is a crochet blanket she made and a nice comfy cushion. This is one of her favourite spots and she will often spend hours here listening to music, reading and working on her craft projects.
+            </div>
+            <!---Image One: Note 2 --->
+            <div class="note rounded" style="top:350px;left:370px;width:80px;height:80px;">
+            Basket of Yarn: Doris's favourite pass time is knitting and crochet. So she has a basket of yarn by her arm chair. She spends hours working on her projects here and she often sends her creations to her family across the UK.
+            </div>
+           
+          </div>
+        
+          <!---IMAGE TWO-->
+          <div class="image">
+            <img src="images/topofsidetable.jpg">
+                <!---Image Two: Note 1 --->
+                <div class="note" style="top:150px;left:150px;width:200px;height:100px;">
+                Classic Tape Recorder: This is one of the other things that Doris still has of Albert's . He was always a big fan of music and they had a great day learning how to use the player together and dancing around the kitchen in the house they lived in together. When she crochets she often will put on a tape to listen to. 
+               </div>
+
+                <!---Image Two: Note 1 --->
+                <div class="note" style="top:290px;left:100px;width:300px;height:60px;">
+                  Woodland Walks Book:In her room of him or his things as she gave a lot to her children and grandchildren. As having these items was just too much for her. There are only two things of alberts in her room, there is a picture from their wedding day, a tape recorder and this book on woodland walks. This was one of his favourite books as he loved bird watching. Every Sunday he would go on a bird watching walk and we as determined to do all the walks in the book.
+                 </div>
+
+                  <!---Image Two: Note 1 --->
+                <div class="note" style="top:230px;left:400px;width:150px;height:100px;">
+                  Working Yarn: On the side table is her working yarn, i wanted to make this space look lived in and i felt like she would always have some kind of project on the go so I left some yarn on the side which she is working with.
+                 </div>
+
+                <!---Image Two: Note 2
+                <div class="note" style="top:380px;left:370px;width:70px;height:120px;">
+                  Image Two: Note 2
+                </div> --->
+          </div>
+
+          <!---IMAGE THREE-->
+          <div class="image">
+            <img src="images/bottomofsidetable.jpg">
+
+              <!---Image Three: Note 1 --->
+              <div class="note" style="top:200px;left:150px;width:150px;height:200px;">
+                History Books: Doris is a retired history teacher, history is one of her passion so she has some history books in her room to fuel her passion.
+              </div>
+
+              
+          </div>
+      </div>
+
+      <div class="row">
+        <div id="display-note">
+          Default content for the notes area
+        </div>
+      </div>
+
+        <script>
+
+          // Add a mouse click to all note buttons
+          let notes = document.getElementsByClassName("note");
+          let display = document.getElementById("display-note"); 
+          for (let i = 0; i < notes.length; i++) {
+            notes[i].addEventListener("click", function (e) {
+              display.innerHTML = this.innerHTML;
+            });
+          }
+
+          // Generate the image navigation controls
+          let current = 0;
+          let images = document.getElementsByClassName("image");
+          let pastButton = document.getElementById("past"); 
+          let nextButton = document.getElementById("next"); 
+          nextButton.addEventListener("click", function (e) {
+            for (let i = 0; i < images.length; i++) {
+              images[i].style.display = "none";
+            }
+            current++; 
+            if(current>=images.length){current = 0}; 
+            images[current].style.display = "block";
+          });
+          pastButton.addEventListener("click", function (e) {
+            for (let i = 0; i < images.length; i++) {
+              images[i].style.display = "none";
+            }
+            current--; 
+            if(current<0){current = images.length-1}; 
+            images[current].style.display = "block";
+          });
+          
+
+
+
+        </script>
+    </body>
+</html>
+
